@@ -1,7 +1,7 @@
 /* --------------------------------------- VARIABLES --------------------------------------- */
 :root {
 	/* Header height */
-	--header-height: 3rem;
+	--header-height: 5rem;
 
 	/* Colors */
 	--primary-color-yellow: hsl(50, 91%, 52%);
@@ -22,6 +22,7 @@
 	--h1-font-size: 2rem;
 	--h2-font-size: 1.5rem;
 	--h3-font-size: 1.25rem;
+	--nav-link-font-size: 1.125;
 	--normal-font-size: 1rem;
 	--small-font-size: 0.938rem;
 	--smaller-font-size: 0.813rem;
