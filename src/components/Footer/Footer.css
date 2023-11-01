@@ -1,0 +1,28 @@
+footer {
+	width: 100%;
+	background-color: var(--white-color);
+	padding: 1rem;
+}
+
+footer h3 {
+	margin-bottom: 0;
+}
+
+footer .footer-content {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	text-align: center;
+    gap: 1rem;
+}
+
+footer .logo-container {
+    align-self: center;
+}
+
+/* Font sizes for larger devices */
+@media screen and (min-width: 768px) {
+	footer .footer-content {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
