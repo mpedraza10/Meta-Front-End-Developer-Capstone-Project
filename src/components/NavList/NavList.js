@@ -1,26 +1,26 @@
 // Styles
 import "./NavList.css";
 
-const NavList = () => {
+const NavList = ({ closeMenu }) => {
 	return (
-		<ul>
-			<li>
-				<a href="/">Home</a>
+		<ul className="nav-list">
+			<li className="nav-item" onClick={closeMenu}>
+				<a href="#">Home</a>
 			</li>
-			<li>
-				<a href="/">About</a>
+			<li className="nav-item" onClick={closeMenu}>
+				<a href="#">About</a>
 			</li>
-			<li>
-				<a href="/">Menu</a>
+			<li className="nav-item" onClick={closeMenu}>
+				<a href="#">Menu</a>
 			</li>
-			<li>
-				<a href="/">Reservations</a>
+			<li className="nav-item" onClick={closeMenu}>
+				<a href="#">Reservations</a>
 			</li>
-			<li>
-				<a href="/">Order online</a>
+			<li className="nav-item" onClick={closeMenu}>
+				<a href="#">Order online</a>
 			</li>
-			<li>
-				<a href="/">Login</a>
+			<li className="nav-item" onClick={closeMenu}>
+				<a href="#">Login</a>
 			</li>
 		</ul>
 	);
