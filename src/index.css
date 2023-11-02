@@ -18,14 +18,17 @@
 	font-family: "Markazi Text", serif;
 
 	/* Font sizes */
-	--big-font-size: 3rem;
-	--h1-font-size: 2rem;
-	--h2-font-size: 1.5rem;
-	--h3-font-size: 1.25rem;
+	--big-font-size: 5rem;
+	--h1-font-size: 4rem;
+	--h2-font-size: 3rem;
+	--h3-font-size: 2rem;
 	--nav-link-font-size: 1.125;
 	--normal-font-size: 1rem;
 	--small-font-size: 0.938rem;
 	--smaller-font-size: 0.813rem;
+
+	/* Borders */
+	--border-radius: 16px;
 }
 
 /* --------------------------------------- GLOBAL --------------------------------------- */
@@ -40,6 +43,20 @@ h1,
 h2,
 h3 {
 	margin-bottom: 1rem;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: var(--h1-font-size);
+	color: var(--primary-color-yellow);
+}
+
+h2 {
+	font-size: var(--h2-font-size);
+}
+
+h3 {
+	font-size: var(--h3-font-size);
 }
 
 ul {
@@ -67,7 +84,7 @@ body {
 }
 
 /* Font sizes for larger devices */
-@media screen and (min-width: 968px) {
+/* @media screen and (min-width: 968px) {
 	:root {
 		--big-font-size: 4rem;
 		--h1-font-size: 3rem;
@@ -77,4 +94,4 @@ body {
 		--small-font-size: 1rem;
 		--smaller-font-size: 0.938rem;
 	}
-}
+} */
