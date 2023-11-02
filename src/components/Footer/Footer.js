@@ -1,6 +1,3 @@
-// React router imports
-import { NavLink } from "react-router-dom";
-
 // Styles
 import "./Footer.css";
 
