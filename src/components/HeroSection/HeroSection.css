@@ -1,0 +1,81 @@
+.hero-section {
+	width: 100%;
+    background-color: var(--primary-color-green);
+}
+
+.hero-section .hero-content {
+	position: relative;
+	width: 100%;
+    max-width: 850px;
+	padding: 2rem;
+    margin: 0 auto;
+}
+
+.hero-section .hero-content .info h1 {
+	margin-bottom: 0;
+}
+
+.hero-section .hero-content .info h3 {
+	color: var(--white-color);
+}
+
+.hero-section .hero-content .info p {
+	color: var(--white-color);
+	margin-bottom: 1rem;
+	width: 9rem;
+}
+
+.hero-section .hero-content .img-container {
+	display: none;
+}
+
+@media screen and (min-width: 360px) {
+	.hero-section .hero-content .img-container {
+        display: block;
+		position: absolute;
+		bottom: 10%;
+		right: 1rem;
+		height: 180px;
+		width: 180px;
+		overflow: hidden;
+		border-radius: var(--border-radius);
+	}
+
+	.hero-section .hero-content .img-container img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+@media screen and (min-width: 525px) {
+    .hero-section {
+        margin-bottom: 6rem;
+    }
+
+	.hero-section .hero-content .img-container {
+		width: 300px;
+        height: 300px;
+        bottom: -20%;
+	}
+}
+
+@media screen and (min-width: 660px) {
+	.hero-section .hero-content .img-container {
+		width: 300px;
+        height: 300px;
+        bottom: -5%;
+	}
+}
+
+@media screen and (min-width: 780px) {
+    .hero-section {
+        margin-bottom: 8rem;
+    }
+
+	.hero-section .hero-content .img-container {
+        width: 400px;
+        height: 400px;
+        bottom: -30%;
+	}
+}

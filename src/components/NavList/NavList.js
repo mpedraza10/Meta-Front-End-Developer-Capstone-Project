@@ -1,3 +1,6 @@
+// React router imports
+import { NavLink } from "react-router-dom";
+
 // Styles
 import "./NavList.css";
 
@@ -5,22 +8,22 @@ const NavList = ({ closeMenu }) => {
 	return (
 		<ul className="nav-list">
 			<li className="nav-item" onClick={closeMenu}>
-				<a href="#">Home</a>
+				<NavLink to="/">Home</NavLink>
 			</li>
 			<li className="nav-item" onClick={closeMenu}>
-				<a href="#">About</a>
+				<NavLink to="/">About</NavLink>
 			</li>
 			<li className="nav-item" onClick={closeMenu}>
-				<a href="#">Menu</a>
+				<NavLink to="/">Menu</NavLink>
 			</li>
 			<li className="nav-item" onClick={closeMenu}>
-				<a href="#">Reservations</a>
+				<NavLink to="/">Reservations</NavLink>
 			</li>
 			<li className="nav-item" onClick={closeMenu}>
-				<a href="#">Order online</a>
+				<NavLink to="/">Order online</NavLink>
 			</li>
 			<li className="nav-item" onClick={closeMenu}>
-				<a href="#">Login</a>
+				<NavLink to="/">Login</NavLink>
 			</li>
 		</ul>
 	);
