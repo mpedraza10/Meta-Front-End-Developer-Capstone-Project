@@ -9,6 +9,7 @@
     max-width: 850px;
 	padding: 2rem;
     margin: 0 auto;
+    text-align: center;
 }
 
 .hero-section .hero-content .info h1 {
@@ -21,8 +22,8 @@
 
 .hero-section .hero-content .info p {
 	color: var(--white-color);
-	margin-bottom: 1rem;
 	width: 9rem;
+    margin: 0 auto 1rem auto;
 }
 
 .hero-section .hero-content .img-container {
@@ -30,6 +31,15 @@
 }
 
 @media screen and (min-width: 360px) {
+    .hero-section .hero-content {
+        text-align: left;
+    }
+
+    .hero-section .hero-content .info p {
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
 	.hero-section .hero-content .img-container {
         display: block;
 		position: absolute;
