@@ -17,10 +17,10 @@ const HeroSection = ({ description, alt }) => {
 					</div>
 					{alt ? (
 						<div className="img-container alt">
-							<img src="/images/restaurant chef B.jpg" alt="Left Image" className="image-left" />
+							<img src="/images/restaurant chef B.jpg" alt="Chef" className="image-left" />
 							<img
 								src="/images/restaurant.jpg"
-								alt="Right Image"
+								alt="Restaurant"
 								className="image-right"
 							/>
 						</div>
