@@ -1,15 +1,15 @@
 .hero-section {
 	width: 100%;
-    background-color: var(--primary-color-green);
+	background-color: var(--primary-color-green);
 }
 
 .hero-section .hero-content {
 	position: relative;
 	width: 100%;
-    max-width: 850px;
+	max-width: 850px;
 	padding: 2rem;
-    margin: 0 auto;
-    text-align: center;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .hero-section .hero-content .info h1 {
@@ -23,25 +23,46 @@
 .hero-section .hero-content .info p {
 	color: var(--white-color);
 	width: 9rem;
-    margin: 0 auto 1rem auto;
+	margin: 0 auto 1rem auto;
 }
 
-.hero-section .hero-content .img-container {
+.hero-section .hero-content .img-container,
+.hero-section .hero-content .img-container.alt {
 	display: none;
 }
 
+.hero-section .hero-content .img-container.alt .image-left {
+	position: absolute;
+	bottom: 5%;
+	left: 10%;
+	z-index: 2;
+	height: 120px;
+	width: 120px;
+	object-fit: cover;
+}
+
+.hero-section .hero-content .img-container.alt .image-right {
+	position: absolute;
+	top: -25%;
+	right: -5%;
+	z-index: 1;
+	height: 120px;
+	width: 120px;
+}
+
 @media screen and (min-width: 360px) {
-    .hero-section .hero-content {
-        text-align: left;
-    }
+	.hero-section .hero-content {
+		text-align: left;
+	}
 
-    .hero-section .hero-content .info p {
-        margin: 0;
-        margin-bottom: 1rem;
-    }
+	.hero-section .hero-content .info p {
+		margin: 0;
+		margin-bottom: 1rem;
+	}
 
-	.hero-section .hero-content .img-container {
-        display: block;
+	.hero-section .hero-content .img-container,
+	.hero-section .hero-content .img-container.alt {
+		display: block;
 		position: absolute;
 		bottom: 10%;
 		right: 1rem;
@@ -49,6 +70,10 @@
 		width: 180px;
 		overflow: hidden;
 		border-radius: var(--border-radius);
+	}
+
+	.hero-section .hero-content .img-container.alt {
+		overflow: visible;
 	}
 
 	.hero-section .hero-content .img-container img {
@@ -59,33 +84,80 @@
 }
 
 @media screen and (min-width: 525px) {
-    .hero-section {
-        margin-bottom: 6rem;
-    }
+	.hero-section {
+		margin-bottom: 6rem;
+	}
 
-	.hero-section .hero-content .img-container {
+	.hero-section .hero-content .img-container,
+	.hero-section .hero-content .img-container.alt {
 		width: 300px;
-        height: 300px;
-        bottom: -20%;
+		height: 300px;
+		bottom: -20%;
+	}
+
+	.hero-section .hero-content .img-container.alt .image-left {
+		width: 200px;
+		height: 200px;
+	}
+
+	.hero-section .hero-content .img-container.alt .image-right {
+		width: 200px;
+		height: 200px;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.hero-section .hero-content .img-container.alt .image-left {
+		left: -25%;
+	}
+
+	.hero-section .hero-content .img-container.alt .image-right {
+		right: 10%;
 	}
 }
 
 @media screen and (min-width: 660px) {
 	.hero-section .hero-content .img-container {
 		width: 300px;
-        height: 300px;
-        bottom: -5%;
+		height: 300px;
+		bottom: -5%;
+	}
+
+	.hero-section .hero-content .img-container.alt .image-left {
+		width: 250px;
+		height: 250px;
+        left: -50%;
+	}
+
+	.hero-section .hero-content .img-container.alt .image-right {
+		width: 250px;
+		height: 250px;
+        top: -35%;
 	}
 }
 
 @media screen and (min-width: 780px) {
-    .hero-section {
-        margin-bottom: 8rem;
-    }
+	.hero-section {
+		margin-bottom: 8rem;
+	}
 
 	.hero-section .hero-content .img-container {
-        width: 400px;
-        height: 400px;
-        bottom: -30%;
+		width: 400px;
+		height: 400px;
+		bottom: -30%;
+	}
+
+    .hero-section .hero-content .img-container.alt .image-left {
+		width: 300px;
+		height: 300px;
+        left: -50%;
+        bottom: -15%;
+	}
+
+	.hero-section .hero-content .img-container.alt .image-right {
+		width: 300px;
+		height: 300px;
+        top: -40%;
+        right: 0;
 	}
 }
