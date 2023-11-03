@@ -4,7 +4,7 @@ import "./HeroSection.css";
 // Components
 import Button from "../Button/Button";
 
-const HeroSection = () => {
+const HeroSection = ({ description, alt }) => {
 	return (
 		<section className="hero-section">
 			<div className="container">
@@ -12,18 +12,26 @@ const HeroSection = () => {
 					<div className="info">
 						<h1>Little Lemon</h1>
 						<h3>Chicago</h3>
-						<p>
-							We are a family owned Mediterranean restaurant, focused on
-							traditional recipes served with a modern twist.
-						</p>
-						<Button type="main-btn">Reserve a table</Button>
+						<p>{description}</p>
+						{!alt && <Button type="main-btn">Reserve a table</Button>}
 					</div>
-					<div className="img-container">
-						<img
-							src="/images/restauranfood.jpg"
-							alt="Food from the restaurant"
-						/>
-					</div>
+					{alt ? (
+						<div className="img-container alt">
+							<img src="/images/restaurant chef B.jpg" alt="Chef" className="image-left" />
+							<img
+								src="/images/restaurant.jpg"
+								alt="Restaurant"
+								className="image-right"
+							/>
+						</div>
+					) : (
+						<div className="img-container">
+							<img
+								src="/images/restauranfood.jpg"
+								alt="Food from the restaurant"
+							/>
+						</div>
+					)}
 				</div>
 			</div>
 		</section>
