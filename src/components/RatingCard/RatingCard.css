@@ -1,0 +1,44 @@
+.rating-card {
+	width: 100%;
+    max-width: 200px;
+	border: 1px solid var(--black-color);
+	border-radius: var(--border-radius);
+	padding: 1rem;
+}
+
+.rating-card .rating-card-title {
+	font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.rating-card .profile-info {
+	display: flex;
+	gap: 0.3rem;
+	align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.rating-card .profile-info .profile-pic-cont {
+	width: 50%;
+}
+
+.rating-card .profile-info .profile-pic-cont img {
+	width: 50%;
+	height: auto;
+}
+
+.rating-card .profile-info .name-rating-cont {
+	width: 50%;
+}
+
+.rating-card .profile-info .name-rating-cont .rate {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+}
+
+.rating-card .profile-info .name-rating-cont .rate svg {
+	width: 15px;
+	height: 15px;
+	fill: var(--primary-color-yellow);
+}
