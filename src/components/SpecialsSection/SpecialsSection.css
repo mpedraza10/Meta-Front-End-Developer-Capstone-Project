@@ -26,4 +26,8 @@
 		align-items: center;
 		text-align: left;
 	}
+
+	.specials-section .specials-content .specials-header h2 {
+		margin: 0;
+	}
 }
