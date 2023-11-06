@@ -6,7 +6,7 @@
 	background-color: transparent;
 	text-align: center;
 	transition: transform 0.5s;
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .btn.main-btn {
@@ -17,4 +17,16 @@
 .btn.main-btn:hover,
 .btn.main-btn:active {
 	transform: scale(1.1);
+}
+
+.btn.no-outline {
+	border: none;
+	padding: 0;
+	font-weight: bold;
+}
+
+.btn.no-outline:hover,
+.btn.no-outline:active {
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--black-color);
 }

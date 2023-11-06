@@ -1,0 +1,16 @@
+.specials-list {
+    width: 100%;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 768px) {
+    .specials-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 5rem 0;
+    }
+}
