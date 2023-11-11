@@ -1,3 +1,6 @@
+// React router imports
+import { Link } from "react-router-dom";
+
 // Components
 import SpecialsList from "../SpecialsList/SpecialsList";
 import Button from "../Button/Button";
@@ -12,7 +15,9 @@ const SpecialsSection = () => {
 				<div className="specials-content">
 					<div className="specials-header">
 						<h2>This weeks specials!</h2>
-						<Button type="main-btn">Reserve a table</Button>
+						<Link to="/reserve">
+							<Button type="main-btn">Reserve a table</Button>
+						</Link>
 					</div>
 					<div>
 						<SpecialsList />

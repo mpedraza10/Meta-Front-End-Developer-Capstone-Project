@@ -6,6 +6,7 @@ import "./App.css";
 
 // Components
 import HomePage from "./pages/HomePage/HomePage";
+import ReservationPage from "./pages/ReservationPage/ReservationPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
@@ -15,6 +16,7 @@ const App = () => {
 			<Header />
 			<Routes>
 				<Route path="/" element={<HomePage />}></Route>
+				<Route path="/reserve" element={<ReservationPage />}></Route>
 			</Routes>
 			<Footer />
 		</>
