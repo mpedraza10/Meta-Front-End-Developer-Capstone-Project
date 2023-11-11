@@ -1,3 +1,7 @@
+// Components
+import Selector from "../UI/Selector/Selector";
+import CupsSvg from "../UI/SVGs/CupsSvg";
+
 // Styles
 import "./ReservationForm.css";
 
@@ -23,6 +27,9 @@ const available_times = [
 	},
 ];
 
+// Ocassion options
+const occasion_options = ["Birthday", "Engagement", "Anniversary"];
+
 const ReservationForm = () => {
 	return (
 		<form className="reservation-form">
@@ -37,6 +44,11 @@ const ReservationForm = () => {
 			<label htmlFor="guests">Number of guests</label>
 			<input type="number" placeholder="1" min="1" max="10" id="guests" />
 			<label htmlFor="occasion">Occasion</label>
+			<Selector
+				title="Ocassion"
+				icon={<CupsSvg />}
+				options={occasion_options}
+			></Selector>
 			<select id="occasion">
 				<option>Birthday</option>
 				<option>Anniversary</option>

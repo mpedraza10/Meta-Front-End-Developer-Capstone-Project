@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 // Components
 import SpecialsList from "../SpecialsList/SpecialsList";
-import Button from "../Button/Button";
+import Button from "../UI/Button/Button";
 
 // Styles
 import "./SpecialsSection.css";

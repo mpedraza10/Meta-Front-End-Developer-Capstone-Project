@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // Components
-import Button from "../Button/Button";
+import Button from "../UI/Button/Button"
 
 // Styles
 import "./HeroSection.css";

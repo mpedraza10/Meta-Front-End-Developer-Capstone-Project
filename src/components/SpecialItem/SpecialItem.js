@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 // Components
-import Button from "../Button/Button";
+import Button from "../UI/Button/Button";
 
 // Styles
 import "./SpecialItem.css";
