@@ -1,18 +1,14 @@
 header .nav-list {
-	width: 100%;
-	height: 50%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-evenly;
-}
-
-header .nav-list .nav-item a.active {
-	text-decoration: underline;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 @media screen and (min-width: 768px) {
-	header .nav-list {
-		flex-direction: row;
-	}
+    header .nav-list {
+        flex-direction: row;
+    }
 }

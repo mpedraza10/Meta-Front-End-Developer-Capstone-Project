@@ -1,43 +1,23 @@
-// React router
-import { Link } from "react-router-dom";
-
-// Components
-import Button from "../UI/Button/Button";
-
 // Styles
 import "./HeroSection.css";
 
-const HeroSection = ({
-	id,
-	title,
-	subtitle,
-	description,
-	imgSrc,
-	noImg,
-	alt,
-	action,
-}) => {
+// Components
+import Button from "../Button/Button";
+
+const HeroSection = ({ description, alt }) => {
 	return (
-		<section className="hero-section" id={id && id}>
+		<section className="hero-section">
 			<div className="container">
 				<div className="hero-content">
 					<div className="info">
-						<h1>{title}</h1>
-						<h3>{subtitle}</h3>
+						<h1>Little Lemon</h1>
+						<h3>Chicago</h3>
 						<p>{description}</p>
-						{action && (
-							<Link to="/reserve">
-								<Button type="main-btn">Reserve a table</Button>
-							</Link>
-						)}
+						{!alt && <Button type="main-btn">Reserve a table</Button>}
 					</div>
 					{alt ? (
 						<div className="img-container alt">
-							<img
-								src="/images/restaurant chef B.jpg"
-								alt="Chef"
-								className="image-left"
-							/>
+							<img src="/images/restaurant chef B.jpg" alt="Chef" className="image-left" />
 							<img
 								src="/images/restaurant.jpg"
 								alt="Restaurant"
@@ -45,14 +25,12 @@ const HeroSection = ({
 							/>
 						</div>
 					) : (
-						!noImg && (
-							<div className="img-container">
-								<img
-									src={`${imgSrc ? imgSrc : "/images/restauranfood.jpg"}`}
-									alt="Food from the restaurant"
-								/>
-							</div>
-						)
+						<div className="img-container">
+							<img
+								src="/images/restauranfood.jpg"
+								alt="Food from the restaurant"
+							/>
+						</div>
 					)}
 				</div>
 			</div>
