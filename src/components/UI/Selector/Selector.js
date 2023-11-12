@@ -4,7 +4,7 @@ import { useState } from "react";
 // Styles
 import "./Selector.css";
 
-const Selector = ({ title, icon, options }) => {
+const Selector = ({ title, icon, options, setState }) => {
 	// State
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedItem, setSelectedItem] = useState(null);
@@ -53,10 +53,14 @@ const Selector = ({ title, icon, options }) => {
 			)}
 			{isOpen && (
 				<ul className="dropdown-list">
-					{options.map((option) => (
+					{options.map((option, index) => (
 						<li
+							key={index}
 							className="selector-option"
-							onClick={() => setSelectedItem(option)}
+							onClick={() => {
+								setSelectedItem(option);
+								setState(option);
+							}}
 						>
 							{option}
 						</li>
