@@ -101,7 +101,7 @@ const ReservationForm = () => {
 					setState={setOcassion}
 				></Selector>
 			</div>
-			<div>
+			<div className="two-cols">
 				<label>Special Requests (optional):</label>
 				<textarea
 					value={requests}

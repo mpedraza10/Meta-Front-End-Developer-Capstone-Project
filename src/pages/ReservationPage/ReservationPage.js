@@ -30,6 +30,7 @@ const ReservationPage = () => {
 				description=""
 				imgSrc="/images/reserve-table.jpg"
 				noImg={true}
+                id="reservation-hero-section"
 			/>
 			<section className="reservation-section">
 				<div className="container">

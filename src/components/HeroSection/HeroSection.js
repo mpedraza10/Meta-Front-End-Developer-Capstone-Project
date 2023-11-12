@@ -2,12 +2,13 @@
 import { Link } from "react-router-dom";
 
 // Components
-import Button from "../UI/Button/Button"
+import Button from "../UI/Button/Button";
 
 // Styles
 import "./HeroSection.css";
 
 const HeroSection = ({
+	id,
 	title,
 	subtitle,
 	description,
@@ -17,7 +18,7 @@ const HeroSection = ({
 	action,
 }) => {
 	return (
-		<section className="hero-section">
+		<section className="hero-section" id={id && id}>
 			<div className="container">
 				<div className="hero-content">
 					<div className="info">
