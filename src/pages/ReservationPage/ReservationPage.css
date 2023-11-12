@@ -1,0 +1,21 @@
+.reservation-section .reservation-content {
+	width: 100%;
+	max-width: 850px;
+	padding: 2rem;
+	margin: 0 auto 1rem auto;
+}
+
+.reservation-section .considerations-list {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 1rem;
+}
+
+/* Desktop styles */
+
+@media screen and (min-width: 525px) {
+	#reservation-hero-section {
+		margin-bottom: 1rem;
+	}
+}

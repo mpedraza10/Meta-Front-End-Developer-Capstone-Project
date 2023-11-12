@@ -11,19 +11,19 @@ const NavList = ({ closeMenu }) => {
 				<NavLink to="/">Home</NavLink>
 			</li>
 			<li className="nav-item" onClick={closeMenu}>
-				<NavLink to="/">About</NavLink>
+				<NavLink to="/about">About</NavLink>
 			</li>
 			<li className="nav-item" onClick={closeMenu}>
-				<NavLink to="/">Menu</NavLink>
+				<NavLink to="/menu">Menu</NavLink>
 			</li>
 			<li className="nav-item" onClick={closeMenu}>
-				<NavLink to="/">Reservations</NavLink>
+				<NavLink to="/reserve">Reservations</NavLink>
 			</li>
 			<li className="nav-item" onClick={closeMenu}>
-				<NavLink to="/">Order online</NavLink>
+				<NavLink to="/order-online">Order online</NavLink>
 			</li>
 			<li className="nav-item" onClick={closeMenu}>
-				<NavLink to="/">Login</NavLink>
+				<NavLink to="/login">Login</NavLink>
 			</li>
 		</ul>
 	);

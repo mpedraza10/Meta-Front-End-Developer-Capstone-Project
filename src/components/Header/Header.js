@@ -1,6 +1,9 @@
 // React imports
 import { useState } from "react";
 
+// React router
+import { NavLink } from "react-router-dom";
+
 // Styles
 import "./Header.css";
 
@@ -23,11 +26,16 @@ const Header = () => {
 		<header>
 			<div className="container">
 				<div className="header-content">
-					<img src={logo} alt="Little Lemon Logo" />
+					<NavLink to="/">
+						<img src={logo} alt="Little Lemon Logo" />
+					</NavLink>
 					<nav className={`menu ${isMenuOpen ? "open" : ""}`}>
 						<NavList closeMenu={handleMenuClick} />
 					</nav>
-					<div className={`hamburger-menu ${isMenuOpen ? "open" : ""}`} onClick={handleMenuClick}>
+					<div
+						className={`hamburger-menu ${isMenuOpen ? "open" : ""}`}
+						onClick={handleMenuClick}
+					>
 						<span className="bar"></span>
 						<span className="bar"></span>
 						<span className="bar"></span>
