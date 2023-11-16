@@ -4,15 +4,17 @@ import { useState } from "react";
 // Styles
 import "./Selector.css";
 
-const Selector = ({ title, icon, options, setState }) => {
+const Selector = ({ id, title, icon, options, setState }) => {
 	// State
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedItem, setSelectedItem] = useState(null);
 
 	return (
 		<div
+			id={id && id}
 			className={`selector ${selectedItem && "selected-item"}`}
 			onClick={() => setIsOpen(!isOpen)}
+			data-testid={`${title.toLowerCase()}-selector`}
 		>
 			<span className={`selector-icon ${selectedItem && "selected-item"}`}>
 				{icon}
