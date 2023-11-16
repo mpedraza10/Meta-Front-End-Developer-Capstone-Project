@@ -39,6 +39,7 @@ const ReservationForm = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
+		// Create the form data to be submitted
 		const formData = {
 			date: date,
 			guests: guests,
@@ -46,15 +47,14 @@ const ReservationForm = () => {
 			ocassion: ocassion,
 			requests: requests,
 		};
-		console.log(formData);
 
+		// Filter the available times
 		const filtered_times = available_times.filter(
 			(available_time) => available_time !== time
 		);
 
+		// Update the available times array
 		available_times = [...filtered_times];
-
-		console.log(available_times);
 
 		navigate("/success");
 	};
@@ -91,6 +91,7 @@ const ReservationForm = () => {
 					icon={<TimeSvg />}
 					options={available_times}
 					setState={setTime}
+					id="time-selector"
 				></Selector>
 			</div>
 			<div>
@@ -99,6 +100,7 @@ const ReservationForm = () => {
 					icon={<CupsSvg />}
 					options={occasion_options}
 					setState={setOcassion}
+					id="ocassion-selector"
 				></Selector>
 			</div>
 			<div className="two-cols">
