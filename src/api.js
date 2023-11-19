@@ -5,7 +5,7 @@
 const STORAGE_KEY = "bookingData";
 
 // Function to initialize available times for each day
-const initializeAvailableTimes = () => {
+export const initializeAvailableTimes = () => {
 	const availableTimes = {};
 	const currentDate = new Date();
 
