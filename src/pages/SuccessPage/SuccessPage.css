@@ -1,0 +1,25 @@
+.success-content {
+	width: 100%;
+	max-width: 850px;
+	padding: 2rem;
+	margin: 0 auto 1rem auto;
+	text-align: center;
+}
+
+.success-content p {
+    margin-bottom: 1rem;
+}
+
+.success-content svg {
+	width: 8rem;
+	height: 8rem;
+	color: green;
+}
+
+/* Desktop styles */
+
+@media screen and (min-width: 525px) {
+	#success-hero-section {
+		margin-bottom: 1rem;
+	}
+}
