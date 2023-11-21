@@ -19,8 +19,6 @@ export const initializeAvailableTimes = () => {
 		const storedData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
 		const remainderTimes = storedData[formattedDate] || [];
 
-		console.log(remainderTimes);
-
 		// Filter out the taken times from the initial available times
 		const initialAvailableTimes = [
 			"17:00",
