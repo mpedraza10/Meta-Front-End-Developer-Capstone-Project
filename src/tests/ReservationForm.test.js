@@ -2,7 +2,7 @@ import React from "react";
 import {
 	render,
 	screen,
-	// fireEvent,
+	fireEvent,
 	// act,
 	// waitFor,
 } from "@testing-library/react";
@@ -47,6 +47,28 @@ describe("ReservationForm component", () => {
 		expect(screen.getByLabelText(/number of guests/i)).toBeInTheDocument();
 		expect(screen.getByTestId("time-selector")).toBeInTheDocument();
 		expect(screen.getByTestId("ocassion-selector")).toBeInTheDocument();
+	});
+
+	it("Validates form data before submitting", () => {
+		render(
+			<MemoryRouter initialEntries={["/"]}>
+				<ReservationForm />
+			</MemoryRouter>
+		);
+
+		// Click the reserve btn without filling data
+		fireEvent.click(screen.getByText(/reserve table/i));
+
+		// Check if form elements are present
+		expect(
+			screen.getByText(/number of guests has to be at least 1./i)
+		).toBeInTheDocument();
+		expect(
+			screen.getByText(/you need to add a time for your reservation please./i)
+		).toBeInTheDocument();
+		expect(
+			screen.getByText(/you need to add an ocassion please./i)
+		).toBeInTheDocument();
 	});
 
 	// it("submits the form correctly", async () => {

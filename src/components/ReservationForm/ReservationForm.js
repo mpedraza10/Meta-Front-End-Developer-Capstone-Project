@@ -33,47 +33,97 @@ const ReservationForm = () => {
 	const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
 	const [maxDate, setMaxDate] = useState("");
 	const [guests, setGuests] = useState("");
+	const [guestsError, setGuestsError] = useState("");
 	const [time, setTime] = useState("");
+	const [timeError, setTimeError] = useState("");
 	const [ocassion, setOcassion] = useState("");
+	const [ocassionError, setOcassionError] = useState("");
 	const [requests, setRequests] = useState("");
 	const [availableTimes, setAvailableTimes] = useState([]);
 
 	// Helper functions
 
+	// Function to validate form data
+	const validateFormData = (formData) => {
+		let numErros = 0;
+
+		// Check time
+		if (formData.time === "") {
+			setTimeError("You need to add a time for your reservation please.");
+			numErros++;
+		}
+
+		// Check ocassion
+		if (formData.ocassion === "") {
+			setOcassionError("You need to add an ocassion please.");
+			numErros++;
+		}
+
+		// Check guests
+		if (formData.guests === "" || +formData.guests < 1) {
+			setGuestsError("Number of guests has to be at least 1.");
+			numErros++;
+		} else if (+formData.guests > 20) {
+			setGuestsError(
+				"We can't take more than 20 guests, maybe try two reservations."
+			);
+			numErros++;
+		}
+
+		return numErros;
+	};
+
 	// Function that handles the reservation form submission
-	const handleSubmit = (e) => {
-		const submitData = async () => {
-			try {
-				e.preventDefault();
+	const handleSubmit = async (e) => {
+		try {
+			e.preventDefault();
 
-				// Create the form data to be submitted
-				const formData = {
-					date: date,
-					guests: guests,
-					time: time,
-					ocassion: ocassion,
-					requests: requests,
-				};
+			// Create the form data to be submitted
+			const formData = {
+				date: date,
+				guests: guests,
+				time: time,
+				ocassion: ocassion,
+				requests: requests,
+			};
 
-				const response = await submitApi(formData);
+			// Validate form data
+			let numErros = validateFormData(formData);
 
-				if (response.success) {
-					// If the submission is successful, navigate to the success page
-					navigate("/success", {
-						state: { reservationData: formData },
-					});
-				} else {
-					// Handle error if needed
-					console.log("Submission not successful!");
-				}
-			} catch (error) {
-				console.log("Error submitting data: ", error.error);
+			// If we have errors we don't send form data
+			if (numErros > 0) return;
+
+			const response = await submitApi(formData);
+
+			if (response.success) {
+				// If the submission is successful, navigate to the success page
+				navigate("/success", {
+					state: { reservationData: formData },
+				});
+			} else {
+				// Handle error if needed
+				console.log("Submission not successful!");
 			}
-		};
-		submitData();
+		} catch (error) {
+			console.log("Error submitting data: ", error.error);
+		}
 	};
 
 	// Effects
+
+	// Effect to check if the time is valid to remove errors
+	useEffect(() => {
+		if (time !== "") {
+			setTimeError("");
+		}
+	}, [time]);
+
+	// Effect to check if the ocassion is valid to remove errors
+	useEffect(() => {
+		if (ocassion !== "") {
+			setOcassionError("");
+		}
+	}, [ocassion]);
 
 	// Effect to check depending on the date select we retrieve the available times
 	useEffect(() => {
@@ -116,13 +166,22 @@ const ReservationForm = () => {
 				<input
 					type="number"
 					placeholder="1"
-					min="1"
-					max="10"
 					value={guests}
 					id="guests"
-					onChange={(e) => setGuests(e.target.value)}
-					required
+					onChange={(e) => {
+						setGuests(e.target.value);
+						if (e.target.value > 20) {
+							setGuestsError(
+								"We can't take more than 20 guests, maybe try two reservations."
+							);
+						} else if (e.target.value < 1) {
+							setGuestsError("Number of guests has to be at least 1.");
+						} else {
+							setGuestsError("");
+						}
+					}}
 				/>
+				{guestsError && <p style={{ color: "red" }}>{guestsError}</p>}
 			</div>
 			<div>
 				<Selector
@@ -132,6 +191,7 @@ const ReservationForm = () => {
 					setState={setTime}
 					id="time-selector"
 				></Selector>
+				{timeError && <p style={{ color: "red" }}>{timeError}</p>}
 			</div>
 			<div>
 				<Selector
@@ -141,6 +201,7 @@ const ReservationForm = () => {
 					setState={setOcassion}
 					id="ocassion-selector"
 				></Selector>
+				{ocassionError && <p style={{ color: "red" }}>{ocassionError}</p>}
 			</div>
 			<div className="two-cols">
 				<label>Special Requests (optional):</label>

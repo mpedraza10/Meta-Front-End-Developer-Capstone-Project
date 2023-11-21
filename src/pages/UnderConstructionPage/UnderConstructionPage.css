@@ -1,0 +1,13 @@
+.under-construction-section {
+	width: 100%;
+	min-height: calc(100vh - var(--header-height));
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.under-construction-section img {
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+}
