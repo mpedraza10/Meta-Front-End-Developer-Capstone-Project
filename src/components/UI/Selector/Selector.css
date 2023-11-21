@@ -46,19 +46,25 @@
 	top: 100%;
 	left: 0;
 	z-index: 1;
+    background-color: var(--highlight-color-white);
+    border-radius: 8px;
+    margin-top: 0.5rem;
 }
 
 .selector .dropdown-list .selector-option {
 	color: var(--primary-color-green);
-	margin: 1rem 0;
+	padding: 2rem 0;
 	width: 100%;
 	height: 3.375rem;
-	background-color: var(--highlight-color-white);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-bottom: 1px dotted black;
 	cursor: pointer;
+}
+
+.selector .dropdown-list .selector-option:last-child {
+    border-bottom: none;
 }
 
 .selector .dropdown-list .selector-option:hover,
