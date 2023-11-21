@@ -14,7 +14,15 @@ export const initializeAvailableTimes = () => {
 		const date = new Date(currentDate);
 		date.setDate(currentDate.getDate() + i);
 		const formattedDate = date.toISOString().split("T")[0];
-		availableTimes[formattedDate] = [
+
+		// Check if there are already taken times for this date
+		const storedData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+		const remainderTimes = storedData[formattedDate] || [];
+
+		console.log(remainderTimes);
+
+		// Filter out the taken times from the initial available times
+		const initialAvailableTimes = [
 			"17:00",
 			"18:00",
 			"19:00",
@@ -22,6 +30,16 @@ export const initializeAvailableTimes = () => {
 			"21:00",
 			"22:00",
 		];
+
+		const filteredTimes = initialAvailableTimes.filter((time) =>
+			remainderTimes.includes(time)
+		);
+
+		if (remainderTimes.length === 0) {
+			availableTimes[formattedDate] = initialAvailableTimes;
+		} else {
+			availableTimes[formattedDate] = filteredTimes;
+		}
 	}
 
 	return availableTimes;
