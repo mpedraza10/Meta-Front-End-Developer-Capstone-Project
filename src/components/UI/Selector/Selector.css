@@ -46,9 +46,12 @@
 	top: 100%;
 	left: 0;
 	z-index: 1;
-    background-color: var(--highlight-color-white);
-    border-radius: 8px;
-    margin-top: 0.5rem;
+	background-color: var(--highlight-color-white);
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	margin-top: 0.5rem;
+    overflow: hidden;
 }
 
 .selector .dropdown-list .selector-option {
@@ -64,7 +67,7 @@
 }
 
 .selector .dropdown-list .selector-option:last-child {
-    border-bottom: none;
+	border-bottom: none;
 }
 
 .selector .dropdown-list .selector-option:hover,

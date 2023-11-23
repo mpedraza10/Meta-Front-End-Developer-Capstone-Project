@@ -43,11 +43,27 @@ const SuccessPage = () => {
 					Check your email for any details and questions you may have. Hoping to
 					see you soon!
 				</p>
-				<p>Date: {reservationData?.date}</p>
-				<p>Time: {reservationData?.time}</p>
-				<p>Guests: {reservationData?.guests}</p>
-				<p>Ocassion: {reservationData?.ocassion}</p>
-				<p>Requests: {reservationData?.requests}</p>
+				<div className="details">
+					<p>
+						<span className="bold">Date:</span> {reservationData?.date}
+					</p>
+					<p>
+						<span className="bold">Time:</span> {reservationData?.time} hrs.
+					</p>
+					<p>
+						<span className="bold">Guests:</span> {reservationData?.guests}{" "}
+						{reservationData?.guests === "1" ? "person" : "people"}
+					</p>
+					<p>
+						<span className="bold">Ocassion:</span> {reservationData?.ocassion}
+					</p>
+					{reservationData?.requests !== "" && (
+						<p id="requests" className="two-cols">
+							<span className="bold">Requests:</span>{" "}
+							{reservationData?.requests}
+						</p>
+					)}
+				</div>
 				<Link to="/">
 					<Button type="main-btn">Home</Button>
 				</Link>

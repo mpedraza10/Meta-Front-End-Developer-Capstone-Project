@@ -25,7 +25,7 @@ const startDay = String(CURRENT_DATE.getDate()).padStart(2, "0");
 const minDateFormatted = `${startYear}-${startMonth}-${startDay}`;
 
 // Ocassion options
-const occasion_options = ["Birthday", "Engagement", "Anniversary"];
+const occasion_options = ["Birthday", "Engagement", "Anniversary", "None"];
 
 const ReservationForm = () => {
 	// State

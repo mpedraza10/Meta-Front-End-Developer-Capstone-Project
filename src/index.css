@@ -84,6 +84,10 @@ body {
 	margin: 0 auto;
 }
 
+.bold {
+	font-weight: bold;
+}
+
 label {
 	font-size: var(--selector-font-size);
 	display: block;
@@ -105,6 +109,7 @@ textarea {
 	height: 10rem;
 	resize: none;
 	padding: 1rem;
+	white-space: pre-wrap;
 }
 
 input:focus-visible,

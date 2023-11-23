@@ -1,13 +1,28 @@
 .success-content {
 	width: 100%;
 	max-width: 850px;
-	padding: 2rem;
-	margin: 0 auto 1rem auto;
+	padding: 1rem;
+	margin: 0 auto 4rem auto;
 	text-align: center;
 }
 
+.success-content span {
+	display: block;
+}
+
+.success-content .details {
+	display: grid;
+	grid-template-columns: 1fr;
+	margin-bottom: 2rem;
+}
+
 .success-content p {
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+}
+
+#requests {
+	white-space: pre-wrap;
 }
 
 .success-content svg {
@@ -21,5 +36,13 @@
 @media screen and (min-width: 525px) {
 	#success-hero-section {
 		margin-bottom: 1rem;
+	}
+
+	.success-content .details {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.success-content p.two-cols {
+		grid-column: span 2;
 	}
 }
