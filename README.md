@@ -10,9 +10,9 @@ https://meta-front-end-developer-capstone-project-nu.vercel.app/
 Figma file used:
 https://www.figma.com/file/NBLgvtnrI4oBk3Cx7XGNmx/Meta-Front-End-Developer-Capstone-Project?type=design&node-id=0%3A1&mode=design&t=cvbVrr816ekOvMhg-1
 
-Video mobile view: https://youtu.be/rM3EkfOiLIA
+Video mobile view: [https://youtu.be/rM3EkfOiLIA](https://youtu.be/rM3EkfOiLIA)
 
-Video desktop view: https://youtu.be/Hv1k1XI42zQ
+Video desktop view: [https://youtu.be/Hv1k1XI42zQ](https://youtu.be/q8zt-d4jz-I)
 
 ## Commands
 
